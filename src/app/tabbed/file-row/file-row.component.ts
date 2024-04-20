@@ -18,6 +18,7 @@ export class FileRowComponent extends EzComponent {
     @BindValue("contents")
     private contents: string;
 
+    @BindCSSClassToBoolean("filename", "collapsed")
     @BindCSSClassToBoolean("collapsible-area", "show")
     private expanded: boolean = false;
 

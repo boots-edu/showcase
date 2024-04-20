@@ -10,6 +10,7 @@ import html from "./tabbed.component.html";
 import css from "./tabbed.component.css";
 import { FileTabComponent } from "./file-tab/file-tab.component";
 import { FileTabContentsComponent } from "./file-tab-contents/file-tab-contents.component";
+import marked from "marked";
 
 /*
 Tabbed component
@@ -55,6 +56,9 @@ export class TabbedComponent extends EzComponent {
 
     private tabBy: TabBy = "component";
 
+    @BindValue("readme", (readme: string) => marked.parse(readme) as string)
+    private readme: string = "No readme file found";
+
     constructor(
         innerComponentCreator: () => EzComponent,
         files: Record<string, string>,
@@ -72,17 +76,19 @@ export class TabbedComponent extends EzComponent {
 
     loadInFiles() {
         let files = this.files;
-        if (!this.showTests) {
-            files = Object.entries(files).reduce(
-                (acc: Record<string, string>, [filename, contents]) => {
-                    if (!filename.endsWith(".test.ts")) {
-                        acc[filename] = contents;
-                    }
-                    return acc;
-                },
-                {},
-            );
-        }
+        files = Object.entries(files).reduce(
+            (acc: Record<string, string>, [filename, contents]) => {
+                if (filename.toLowerCase() === "readme.md") {
+                    // Find the readme.md file if it exists
+                    this.readme = contents;
+                } else if (this.showTests || !filename.endsWith(".test.ts")) {
+                    // Only include files that are not test files
+                    acc[filename] = contents;
+                }
+                return acc;
+            },
+            {},
+        );
 
         const groupedFiles = groupFiles(files, this.tabBy);
 

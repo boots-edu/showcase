@@ -9,8 +9,20 @@ import {
 import html from "./file-tab.component.html";
 import css from "./file-tab.component.css";
 
+const ALL_CAPS = new Set(["html", "ts", "css", "json"]);
+
+function titleCase(title: string): string {
+    if (ALL_CAPS.has(title)) {
+        return title.toUpperCase();
+    }
+    if (!title) {
+        return "";
+    }
+    return title[0].toUpperCase() + title.slice(1);
+}
+
 export class FileTabComponent extends EzComponent {
-    @BindValue("title")
+    @BindValue("title", titleCase)
     private title: string = "";
 
     @BindCSSClassToBoolean("title", "active")
