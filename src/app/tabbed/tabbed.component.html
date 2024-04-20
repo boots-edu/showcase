@@ -1,0 +1,23 @@
+<div class="tab-component mt-4" id="title-target">
+    <button id="switch-grouping" class="btn btn-outline-secondary float-end">
+        Switch Grouping
+    </button>
+    <label for="show-tests" class="form-check-label p-1 float-end me-2">
+        <input id="show-tests" type="checkbox" class="form-check-input" />
+        Show Test files
+    </label>
+    <h4 id="title" class="ms-3"></h4>
+
+    <div class="container">
+        <div class="row align-items-start">
+            <div
+                class="col-5 shadow-lg p-3 bg-body-tertiary rounded border"
+                id="contents"
+            ></div>
+            <div class="col-7" id="files">
+                <ul class="nav nav-tabs" id="files-tabs" role="tablist"></ul>
+                <div class="tab-content" id="files-contents"></div>
+            </div>
+        </div>
+    </div>
+</div>

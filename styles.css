@@ -7,3 +7,53 @@
 * or put a new css file in the assets directory and add it to the head element
 * of the index.html file if you need them to be global.
 */
+
+.nav-link.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.nav-link:hover {
+    background-color: #dddddd;
+    color: white;
+}
+
+.nav-link {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    border-bottom: 0px;
+    color: #007bff;
+}
+
+.nav-link {
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+
+.accordion-item:first-of-type,
+.accordion-item:last-of-type,
+.accordion-item:first-of-type > .accordion-header .accordion-button,
+.accordion-item:last-of-type > .accordion-header .accordion-button {
+    border-radius: 0px;
+}
+
+.accordion-button {
+    padding: 0.5rem 1rem;
+}
+
+.accordion-body {
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+    padding: 0.5rem;
+}
+
+.jump-link {
+    text-decoration: underline;
+    color: blue;
+    cursor: pointer;
+}
+
+.tab-component {
+    border-top: 1px solid #dee2e6;
+    padding-top: 10px;
+}

@@ -45,6 +45,9 @@ jobs:
                   file: package.json
                   field: homepage
                   value: ${{ steps.get-repo-values.outputs.url }}
+            - name: Gather Components into JSON
+              run: |
+                  python gather_components.py
             - name: Install
               run: |
                   npm install

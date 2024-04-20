@@ -1,0 +1,7 @@
+{
+    "joke": {
+        "joke.component.html": "<p>\n    What's orange and sounds like a carrot?\n    <button id=\"reveal\">Reveal</button>\n    <span id=\"punchline\">A parrot.</span>\n</p>\n",
+        "joke.component.test.ts": "import { describe, expect, test, beforeAll } from \"@jest/globals\";\nimport { JokeComponent } from \"./joke.component\";\nimport { bootstrap } from \"@gsilber/webez\";\n\ndescribe(\"JokeComponent\", () => {\n    let component: any = undefined;\n    beforeAll(() => {\n        const html: string = `<div>Testing Environment</div><div id='main-target'></div>`;\n        component = bootstrap<JokeComponent>(JokeComponent, html);\n    });\n    describe(\"Constructor\", () => {\n        test(\"Create Instance\", () => {\n            expect(component).toBeInstanceOf(JokeComponent);\n        });\n    });\n});\n",
+        "joke.component.ts": "import { BindVisibleToBoolean, Click, EzComponent } from \"@gsilber/webez\";\nimport html from \"./joke.component.html\";\nimport css from \"./joke.component.css\";\n\nexport class JokeComponent extends EzComponent {\n    @BindVisibleToBoolean(\"punchline\")\n    visible: boolean = false;\n\n    constructor() {\n        super(html, css);\n    }\n\n    @Click(\"reveal\")\n    reveal() {\n        this.visible = !this.visible;\n    }\n}\n"
+    }
+}
