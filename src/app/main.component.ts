@@ -7,6 +7,7 @@ import { JokeComponent } from "./joke/joke.component";
 import FILES from "./components.json";
 import { JumpLinkComponent } from "./jump-link/jump-link.component";
 import { GardenMainComponent } from "./garden-example/garden-main.component";
+import { RaceComponent } from "./race/race.component";
 
 const FILES_AS_RECORD = FILES as Record<string, Record<string, string>>;
 
@@ -39,6 +40,9 @@ export class MainComponent extends EzComponent {
                 () => new GardenMainComponent(),
                 getFiles("garden-example"),
             ),
+        );
+        this.tabs.push(
+            new TabbedComponent(() => new RaceComponent(), getFiles("race")),
         );
         this.finishLoadingTabs();
     }
