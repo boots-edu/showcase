@@ -14,6 +14,7 @@ const getExtension = (filename: string): string => {
 
 export class FileRowComponent extends EzComponent {
     @BindValue("filename")
+    @BindValue("filename-text")
     private filename: string;
     @BindValue("contents")
     private contents: string;

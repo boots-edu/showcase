@@ -23,6 +23,7 @@ function titleCase(title: string): string {
 
 export class FileTabComponent extends EzComponent {
     @BindValue("title", titleCase)
+    @BindValue("title-text", titleCase)
     private title: string = "";
 
     @BindCSSClassToBoolean("title", "active")
