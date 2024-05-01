@@ -8,6 +8,7 @@ import FILES from "./components.json";
 import { JumpLinkComponent } from "./jump-link/jump-link.component";
 import { GardenMainComponent } from "./garden-example/garden-main.component";
 import { RaceComponent } from "./race/race.component";
+import { DynamicComponent } from "./dynamic/dynamic.component";
 
 const FILES_AS_RECORD = FILES as Record<string, Record<string, string>>;
 
@@ -39,6 +40,12 @@ export class MainComponent extends EzComponent {
             new TabbedComponent(
                 () => new GardenMainComponent(),
                 getFiles("garden-example"),
+            ),
+        );
+        this.tabs.push(
+            new TabbedComponent(
+                () => new DynamicComponent(),
+                getFiles("dynamic"),
             ),
         );
         this.tabs.push(
