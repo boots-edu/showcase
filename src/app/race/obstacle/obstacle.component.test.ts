@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { ObstacleComponent } from "./obstacle.component";
-import { bootstrap } from "@boots-edu/webz";
+import { bootstrap } from "@gsilber/webez";
 
 describe("ObstacleComponent", () => {
     let component: any = undefined;

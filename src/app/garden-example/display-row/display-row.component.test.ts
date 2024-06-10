@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { DisplayRowComponent } from "./display-row.component";
-import { bootstrap } from "@boots-edu/webz";
+import { bootstrap } from "@gsilber/webez";
 
 describe("DisplayRowComponent", () => {
     let component: any = undefined;

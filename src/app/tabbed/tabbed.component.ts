@@ -3,9 +3,9 @@ import {
     BindValue,
     Change,
     Click,
-    WebzComponent,
+    EzComponent,
     ValueEvent,
-} from "@boots-edu/webz";
+} from "@gsilber/webez";
 import html from "./tabbed.component.html";
 import css from "./tabbed.component.css";
 import { FileTabComponent } from "./file-tab/file-tab.component";
@@ -38,13 +38,13 @@ export function groupFiles(
     return grouped;
 }
 
-export class TabbedComponent extends WebzComponent {
+export class TabbedComponent extends EzComponent {
     @BindAttribute("title-target", "id")
     @BindValue("title")
     private title: string = "";
 
-    private innerComponent: WebzComponent;
-    private innerComponentCreator: () => WebzComponent;
+    private innerComponent: EzComponent;
+    private innerComponentCreator: () => EzComponent;
     private files: Record<string, string>;
 
     private tabs: FileTabComponent[] = [];
@@ -60,7 +60,7 @@ export class TabbedComponent extends WebzComponent {
     private readme: string = "No readme file found";
 
     constructor(
-        innerComponentCreator: () => WebzComponent,
+        innerComponentCreator: () => EzComponent,
         files: Record<string, string>,
     ) {
         super(html, css);

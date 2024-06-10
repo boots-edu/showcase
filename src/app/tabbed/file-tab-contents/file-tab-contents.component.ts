@@ -1,9 +1,9 @@
-import { BindVisibleToBoolean, WebzComponent } from "@boots-edu/webz";
+import { BindVisibleToBoolean, EzComponent } from "@gsilber/webez";
 import html from "./file-tab-contents.component.html";
 import css from "./file-tab-contents.component.css";
 import { FileRowComponent } from "../file-row/file-row.component";
 
-export class FileTabContentsComponent extends WebzComponent {
+export class FileTabContentsComponent extends EzComponent {
     private files: Record<string, string>;
     private tabContents: FileRowComponent[] = [];
     private title: string;

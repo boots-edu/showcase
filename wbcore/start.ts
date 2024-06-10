@@ -1,5 +1,5 @@
-import "../styles.css";
-import { bootstrap } from "@boots-edu/webz";
+import '../styles.css';
+import { bootstrap } from '@gsilber/webez';
 
-import { MainComponent } from "../src/app/main.component";
+import { MainComponent } from '../src/app/main.component';
 bootstrap<MainComponent>(MainComponent);

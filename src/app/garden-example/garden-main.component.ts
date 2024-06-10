@@ -1,16 +1,16 @@
 import html from "./garden-main.component.html";
 import css from "./garden-main.component.css";
-import { WebzComponent } from "@boots-edu/webz";
+import { EzComponent } from "@gsilber/webez";
 import { GardenComponent } from "./garden/garden.component";
 import { DisplayCaseComponent } from "./display-case/display-case.component";
 import { PlantComponent } from "./plant/plant.component";
 
 /**
  * @description GardenMainComponent is the main component of the app
- * @extends WebzComponent
+ * @extends EzComponent
  *
  */
-export class GardenMainComponent extends WebzComponent {
+export class GardenMainComponent extends EzComponent {
     constructor() {
         super(html, css);
 

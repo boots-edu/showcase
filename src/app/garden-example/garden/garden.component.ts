@@ -1,13 +1,13 @@
-import { Click, Notifier, WebzComponent } from "@boots-edu/webz";
+import { Click, EventSubject, EzComponent } from "@gsilber/webez";
 import html from "./garden.component.html";
 import css from "./garden.component.css";
 import { PlantComponent } from "../plant/plant.component";
 
-export class GardenComponent extends WebzComponent {
+export class GardenComponent extends EzComponent {
     private plants: PlantComponent[] = [];
     private latestId = 0;
 
-    gatherEvent: Notifier<PlantComponent[]> = new Notifier();
+    gatherEvent: EventSubject<PlantComponent[]> = new EventSubject();
 
     constructor() {
         super(html, css);

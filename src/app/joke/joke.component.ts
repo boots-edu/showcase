@@ -1,8 +1,8 @@
-import { BindVisibleToBoolean, Click, WebzComponent } from "@boots-edu/webz";
+import { BindVisibleToBoolean, Click, EzComponent } from "@gsilber/webez";
 import html from "./joke.component.html";
 import css from "./joke.component.css";
 
-export class JokeComponent extends WebzComponent {
+export class JokeComponent extends EzComponent {
     @BindVisibleToBoolean("punchline")
     visible: boolean = false;
 

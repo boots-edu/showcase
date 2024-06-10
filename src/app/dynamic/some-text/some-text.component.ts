@@ -1,8 +1,8 @@
-import { BindValue, Click, WebzComponent } from "@boots-edu/webz";
+import { BindValue, Click, EzComponent } from "@gsilber/webez";
 import html from "./some-text.component.html";
 import css from "./some-text.component.css";
 
-export class SomeTextComponent extends WebzComponent {
+export class SomeTextComponent extends EzComponent {
     // Changing textValue will change the text in the element with the id "text"
     @BindValue("text")
     private textValue: string = "Click me!";

@@ -4,19 +4,19 @@ import {
     BindStyleToNumber,
     BindValue,
     Click,
-    WebzComponent,
-    WebzDialog,
+    EzComponent,
+    EzDialog,
     Timer,
     WindowEvent,
-} from "@boots-edu/webz";
+} from "@gsilber/webez";
 import { ObstacleComponent } from "./obstacle/obstacle.component";
 
 /**
  * @description MainComponent is the main component of the app
- * @extends WebzComponent
+ * @extends EzComponent
  *
  */
-export class RaceComponent extends WebzComponent {
+export class RaceComponent extends EzComponent {
     private running: boolean = true;
     private speed: number = 10;
     private topLane: number = 10;
@@ -133,11 +133,9 @@ export class RaceComponent extends WebzComponent {
         }
         if (this.hitTest()) {
             this.running = false;
-            WebzDialog.popup(this, "You Crashed!", "Game Over").subscribe(
-                () => {
-                    this.resetGame();
-                },
-            );
+            EzDialog.popup(this, "You Crashed!", "Game Over").subscribe(() => {
+                this.resetGame();
+            });
         }
     }
     /**

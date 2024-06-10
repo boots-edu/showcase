@@ -1,6 +1,6 @@
 import html from "./main.component.html";
 import css from "./main.component.css";
-import { WebzComponent } from "@boots-edu/webz";
+import { EzComponent } from "@gsilber/webez";
 import { TabbedComponent } from "./tabbed/tabbed.component";
 import { JokeComponent } from "./joke/joke.component";
 
@@ -24,10 +24,10 @@ function getFiles(...names: string[]): Record<string, string> {
 
 /**
  * @description MainComponent is the main component of the app
- * @extends WebzComponent
+ * @extends EzComponent
  *
  */
-export class MainComponent extends WebzComponent {
+export class MainComponent extends EzComponent {
     private tabs: TabbedComponent[] = [];
 
     constructor() {

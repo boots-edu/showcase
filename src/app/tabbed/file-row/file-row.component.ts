@@ -2,8 +2,8 @@ import {
     BindCSSClassToBoolean,
     BindValue,
     Click,
-    WebzComponent,
-} from "@boots-edu/webz";
+    EzComponent,
+} from "@gsilber/webez";
 import html from "./file-row.component.html";
 import css from "./file-row.component.css";
 import hljs from "highlight.js";
@@ -12,7 +12,7 @@ const getExtension = (filename: string): string => {
     return filename.split(".").pop() || "";
 };
 
-export class FileRowComponent extends WebzComponent {
+export class FileRowComponent extends EzComponent {
     @BindValue("filename")
     @BindValue("filename-text")
     private filename: string;
