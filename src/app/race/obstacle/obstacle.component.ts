@@ -1,12 +1,12 @@
 import {
     BindStyleToNumber,
     BindStyleToNumberAppendPx,
-    EzComponent,
-} from "@gsilber/webez";
+    WebzComponent,
+} from "@boots-edu/webz";
 import html from "./obstacle.component.html";
 import css from "./obstacle.component.css";
 
-export class ObstacleComponent extends EzComponent {
+export class ObstacleComponent extends WebzComponent {
     @BindStyleToNumberAppendPx("cone", "top")
     y: number;
     @BindStyleToNumber("cone", "left", "%")

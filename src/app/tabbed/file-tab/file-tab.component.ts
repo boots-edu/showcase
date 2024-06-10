@@ -3,9 +3,9 @@ import {
     BindAttribute,
     BindValue,
     Click,
-    EzComponent,
-    EventSubject,
-} from "@gsilber/webez";
+    WebzComponent,
+    Notifier,
+} from "@boots-edu/webz";
 import html from "./file-tab.component.html";
 import css from "./file-tab.component.css";
 
@@ -21,7 +21,7 @@ function titleCase(title: string): string {
     return title[0].toUpperCase() + title.slice(1);
 }
 
-export class FileTabComponent extends EzComponent {
+export class FileTabComponent extends WebzComponent {
     @BindValue("title", titleCase)
     @BindValue("title-text", titleCase)
     private title: string = "";
@@ -32,7 +32,7 @@ export class FileTabComponent extends EzComponent {
     )
     private active: boolean = false;
 
-    changeTabEvent: EventSubject<FileTabComponent> = new EventSubject();
+    changeTabEvent: Notifier<FileTabComponent> = new Notifier();
 
     constructor(title: string) {
         super(html, css);
@@ -43,7 +43,7 @@ export class FileTabComponent extends EzComponent {
     setActive() {
         const wasChanged = this.activate();
         if (wasChanged) {
-            this.changeTabEvent.next(this);
+            this.changeTabEvent.notify(this);
         }
     }
 

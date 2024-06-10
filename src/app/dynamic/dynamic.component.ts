@@ -1,9 +1,9 @@
-import { BindValue, Click, EzComponent } from "@gsilber/webez";
+import { BindValue, Click, WebzComponent } from "@boots-edu/webz";
 import html from "./dynamic.component.html";
 import css from "./dynamic.component.css";
 import { SomeTextComponent } from "./some-text/some-text.component";
 
-export class DynamicComponent extends EzComponent {
+export class DynamicComponent extends WebzComponent {
     // Bind stringContent to the element with the id "bound-string"
     @BindValue("bound-string")
     private stringContent: string = "THE TEXT";

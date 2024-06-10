@@ -1,13 +1,13 @@
-import { Click, EventSubject, EzComponent } from "@gsilber/webez";
+import { Click, Notifier, WebzComponent } from "@boots-edu/webz";
 import html from "./garden.component.html";
 import css from "./garden.component.css";
 import { PlantComponent } from "../plant/plant.component";
 
-export class GardenComponent extends EzComponent {
+export class GardenComponent extends WebzComponent {
     private plants: PlantComponent[] = [];
     private latestId = 0;
 
-    gatherEvent: EventSubject<PlantComponent[]> = new EventSubject();
+    gatherEvent: Notifier<PlantComponent[]> = new Notifier();
 
     constructor() {
         super(html, css);
@@ -37,6 +37,6 @@ export class GardenComponent extends EzComponent {
     @Click("gather")
     onGather() {
         const removed = this.plants.splice(0, this.plants.length);
-        this.gatherEvent.next(removed);
+        this.gatherEvent.notify(removed);
     }
 }

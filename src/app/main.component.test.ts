@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { MainComponent } from "./main.component";
-import { bootstrap } from "@gsilber/webez";
+import { bootstrap } from "@boots-edu/webz";
 
 describe("MainComponent", () => {
     let component: any = undefined;
@@ -14,4 +14,3 @@ describe("MainComponent", () => {
         });
     });
 });
-
