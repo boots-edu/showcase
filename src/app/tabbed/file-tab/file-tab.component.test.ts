@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { FileTabComponent } from "./file-tab.component";
-import { bootstrap } from "@gsilber/webez";
+import { bootstrap } from "@boots-edu/webz";
 
 describe("FileTabComponent", () => {
     let component: any = undefined;

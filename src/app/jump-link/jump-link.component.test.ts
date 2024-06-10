@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { JumpLinkComponent } from "./jump-link.component";
-import { bootstrap } from "@gsilber/webez";
+import { bootstrap } from "@boots-edu/webz";
 
 describe("JumpLinkComponent", () => {
     let component: any = undefined;

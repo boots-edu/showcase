@@ -1,6 +1,6 @@
 import { describe, expect, test, beforeAll } from "@jest/globals";
 import { DisplayCaseComponent } from "./display-case.component";
-import { bootstrap } from "@gsilber/webez";
+import { bootstrap } from "@boots-edu/webz";
 
 describe("DisplayCaseComponent", () => {
     let component: any = undefined;

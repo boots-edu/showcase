@@ -2,9 +2,9 @@ import {
     BindAttribute,
     BindValue,
     Click,
-    EventSubject,
-    EzComponent,
-} from "@gsilber/webez";
+    Notifier,
+    WebzComponent,
+} from "@boots-edu/webz";
 import html from "./plant.component.html";
 import css from "./plant.component.css";
 
@@ -14,14 +14,14 @@ function makeFlower(): string {
     return FLOWERS[Math.floor(Math.random() * FLOWERS.length)];
 }
 
-export class PlantComponent extends EzComponent {
+export class PlantComponent extends WebzComponent {
     @BindValue("pic")
     private picture: string = makeFlower();
 
     @BindAttribute("pic", "title", (id: number) => id.toString())
     private id: number;
 
-    removeEvent: EventSubject<number> = new EventSubject<number>();
+    removeEvent: Notifier<number> = new Notifier<number>();
 
     constructor(id: number) {
         super(html, css);

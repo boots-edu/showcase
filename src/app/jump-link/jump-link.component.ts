@@ -1,13 +1,13 @@
-import { BindValue, Click, EventSubject, EzComponent } from "@gsilber/webez";
+import { BindValue, Click, Notifier, WebzComponent } from "@boots-edu/webz";
 import html from "./jump-link.component.html";
 import css from "./jump-link.component.css";
 
-export class JumpLinkComponent extends EzComponent {
+export class JumpLinkComponent extends WebzComponent {
     @BindValue("jump")
     private name: string;
     private target: string;
 
-    jumpEvent: EventSubject<JumpLinkComponent> = new EventSubject();
+    jumpEvent: Notifier<JumpLinkComponent> = new Notifier();
 
     constructor(name: string, target: string) {
         super(html, css);
